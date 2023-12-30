@@ -1,0 +1,17 @@
+{
+  "name": "questionnaire",
+  "version": "1.0.0",
+  "description": "This is a web application to learn Node.js.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.2",
+    "remedial": "^1.0.8"
+  }
+}

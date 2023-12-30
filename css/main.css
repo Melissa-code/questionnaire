@@ -1,0 +1,11 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px; 
+    color: black;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem; 
+    color: red; 
+}
