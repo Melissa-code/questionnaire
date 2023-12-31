@@ -1,12 +1,12 @@
 var http = require("http");
 var url = require("url");
 var fs = require("fs");
-require("remedial");
+require('remedial');
 var querystring = require("querystring"); 
 var managePage = require("./js_server/managePage.js"); 
 var manageQuestionnaire = require("./js_server/manageQuestionnaire.js"); 
-// var mysql = require("mysql");
-// var db = require("./js_server/db.js")
+
+
 
 /**
  * Manage the server 
@@ -18,20 +18,23 @@ var manageServer = function(request, response) {
     let urlQueryString = querystring.parse(myUrl.query); 
     let extension = myUrl.pathname.substring(myUrl.pathname.indexOf('.'), myUrl.pathname.length); 
     managePage.initialization(myUrl, extension, request, response, urlQueryString); 
+    
     // Debug in the console 
     if (managePage.url.pathname !== "/favicon.ico"){
-        managePage.sendDataToUser(); 
+        manageFiles();
     }  
+}
 
-
-
-    // Connection to the database
-    db.connection(); 
-    db.instance.query('SELECT * from formulaire', function (error, results, fields) {
-        if (error) throw error;
-            console.log('Les questionnaires sont: ', results);
-    });
-    db.deconnection(); 
+function manageFiles() {
+    if (managePage.url.pathname === "/" || managePage.extension === ".html") {
+        if (managePage.url.pathname === "/afficherQuestions.html") {
+            manageQuestionnaire.afficherQuestions();
+        } else {
+            managePage.sendDataToUser(); 
+        }
+    } else {
+        managePage.sendDataToUser(); 
+    }
 }
 
 // Create the server 

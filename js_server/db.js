@@ -1,18 +1,20 @@
 var mysql = require("mysql");
-var db = require("../config/config.js")
+var config = require("../config/config.js");
 
 // Create an objet to export it 
 var db = {
+    // Connection to the DB 
     instance: null,
 
     connection: function() {
         this.instance = mysql.createConnection({
             host     : config.DBHOST, 
             user     : config.DBUSER,
-            password : config.PASSWORD,
+            password : config.DBPASSWORD,
             database : config.DATABASE
         });
         
+        // Start the connection
         this.instance.connect(function(err){
             if (err) {
                 console.error('Erreur de connexion : ' + err.stack);

@@ -16,6 +16,8 @@ var managePage = {
      * @param {*} request 
      * @param {*} response 
      * @param {*} queryString 
+     * @param {*} objectToSupplant
+     * 
      */
     initialization: function(url, extension, request, response, queryString) {
         this.url = url;
@@ -85,7 +87,7 @@ var managePage = {
         pageHtml = headerHtml + page + footerHtml; 
 
         try {
-            pageHtml = pageHtml.supplant(this.objetToSupplant);
+            pageHtml = pageHtml.supplant(this.objectToSupplant);
         } catch(e){
             //console.log(`Error has occurred!`); 
         }

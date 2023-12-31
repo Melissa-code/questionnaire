@@ -50,7 +50,7 @@ This is a web application to learn Node.js.
 
 - Start the MySQL Server : `$ net start MySQL80` 
 - To stop : `$ net stop MySQL80`
-- or search Windows : "services (applications)" -> MySQL80 -> start/stop 
+- or search Windows : "Services (Application)" -> MySQL80 -> start/stop 
 
 - In Powershell run: `$ mysql -u root -p` (enter your password) - To quit : `exit`
 
